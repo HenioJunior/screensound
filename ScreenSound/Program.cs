@@ -1,11 +1,12 @@
-﻿
+﻿using ScreenSound.Modelos;
+
 Banda ira = new("Ira!");
 ira.AdicionarNota(10);
 ira.AdicionarNota(8);
 ira.AdicionarNota(6);
 
 Banda beatles = new("The Beatles");
-beatles.AdicionarNota(10);
+
 
 Dictionary<string, Banda> bandasRegistradas = new();
 bandasRegistradas.Add(ira.Nome, ira);
