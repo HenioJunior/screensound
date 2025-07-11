@@ -34,9 +34,9 @@ internal class Banda
         albuns.Add(album);
     }
 
-    public void AdicionarNota(int nota)
+    public void AdicionarNota(Avaliacao nota)
     {
-        notas.Add(new Avaliacao(nota));
+        notas.Add(nota);
     }
 
     public void ExibirDiscografia()
