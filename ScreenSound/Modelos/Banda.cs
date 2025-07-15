@@ -1,15 +1,14 @@
 ﻿namespace ScreenSound.Modelos;
 
-internal class Banda
+internal class Banda : IAvaliavel
 {
-
     public string Nome { get; }
-            
-    private List<Album> albuns = [];
-    
-    private List<Avaliacao> notas = [];
-               
-    public double Media 
+
+    private List<Album> albuns = new List<Album>();
+
+    private List<Avaliacao> notas = new List<Avaliacao>();
+
+    public double Media
     {
         get
         {
@@ -29,14 +28,24 @@ internal class Banda
         Nome = nome;
     }
 
-    public void AdicionarAlbum(Album album) 
-    { 
+    public void AdicionarAlbum(Album album)
+    {
         albuns.Add(album);
+    }
+
+    public void RemoverAlbum(Album album)
+    {
+        albuns.Remove(album);
     }
 
     public void AdicionarNota(Avaliacao nota)
     {
         notas.Add(nota);
+    }
+
+    public Album? ObterAlbumPorNome(string nome)
+    {
+        return albuns.FirstOrDefault(a => a.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase));
     }
 
     public void ExibirDiscografia()
